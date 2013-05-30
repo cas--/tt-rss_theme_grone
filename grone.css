@@ -1,0 +1,183 @@
+@import "default.css";
+
+/* Reset
+------------------------------------------------------------ */
+body#ttrssMain,
+body#ttrssPrefs,
+body#ttrssLogin,
+body {
+color: black;
+font-family: "Arial", sans-serif;
+font-size: 13px;
+line-height: 1.5;
+}
+
+.dijitTreeLabel {
+    vertical-align: middle;
+}
+/* Preview Pane
+------------------------------------------------------------ */
+.odd,
+.even {
+background: #fff;
+padding: 5px;
+overflow: hidden;
+}
+
+.even.Unread,
+.even.Unread td {
+background: #fff;
+}
+
+/* I don't care for the content preview or author info. Just show me the headline */
+span.contentPreview,
+span.author {
+display: none;
+}
+
+
+/* Post Content
+------------------------------------------------------------ */
+div.postTitle a {
+color: #000;
+font-size: 20px;
+font-size: 1.250rem; /* 20 / 16 */
+font-weight: 700;
+}
+
+div.postReply div.postContent {
+font-size: 14px;
+font-size: 0.875rem; /* 14 / 16 */
+padding: 20px;
+}
+
+div.postContent p {
+margin-bottom: 16px;
+margin-bottom: 1rem; /* 16 / 16 */
+}
+
+/* set font to gray normal for all read */
+div.cdm.expandable div.cdmHeader a.title {
+    font-weight: normal;
+    color: gray;
+}
+
+/* set font to bold black for unread */
+div.cdm.expandable.Unread div.cdmHeader a.title {
+    font-weight: bold;
+    color: black;
+}
+
+/* disable counter */
+#feedTree .counterNode {
+    display: none;
+}
+
+/* Article Text Summary Blurb */
+span.cdmExcerpt {
+font-size: 12px;
+vertical-align: middle;
+padding-left: 3px;
+}
+
+/* reduce height of feeds to 21px + 2px margin-bottom*/
+#feedTree .dijitTreeNode {
+    line-height: 1.2;
+    margin: 2px 0;
+}
+
+/* move feeds to the left by 10px */
+div.dijitTreeNode{
+margin-left: -10px;
+}
+div.dijitTreeIsRoot{
+margin-left: 0px;
+}
+
+
+
+/* --- bug fix --- */
+.claro .dijitTreeRowHover {
+    border: 0;
+    border-width: 1px;
+    margin: 0px 1px;
+}
+.claro .dijitTreeRowSelected {
+    border: 0;
+    border-width: 1px;
+    margin: 0px 1px;
+}
+/*-------------------*/
+
+
+.claro .dijitTreeRowHover {
+    background-color: rgb(229, 229, 229);
+    background-image: none;
+}
+.claro .dijitTreeRowSelected {
+    background-color: rgb(229, 229, 229);
+    background-image: none;
+}
+
+
+/* image for category expand */
+#ttrssMain .dijitTreeExpandoOpened {
+    background-image: url(grone_imgs/grone_sprite.png);
+    background-position: -16px -16px;
+    position: relative;
+}
+
+#ttrssMain .dijitTreeExpandoClosed {
+    background-image: url(grone_imgs/grone_sprite.png);
+    background-position: 0px -16px;
+    position: relative;
+}
+#ttrssMain .dijitTreeExpandoLeaf {
+    background-image: none;
+}
+/* folder icon */
+#ttrssMain .dijitIconFolderOpen,
+#ttrssMain .dijitFolderOpened {
+    background-image: url(grone_imgs/grone_sprite.png);
+    background-position: -16px 0px;
+}
+#ttrssMain .dijitIconFolderClosed,
+#ttrssMain .dijitFolderClosed {
+    background-image: url(grone_imgs/grone_sprite.png);
+    background-position: 0px 0px;
+}
+
+/* keep text on one line
+div.cdmHeader {
+    white-space: nowrap;
+} */
+
+/* align date to right */
+div.cdmHeader span.updated {
+    text-align: right;
+}
+
+/* set row height to hide overflow excerpt text */
+div.cdmHeader > * {
+    height: 21px;
+}
+
+
+/* use absolute position to hide overflow text */
+#headlines-frame > div > div.cdmHeader > span.titleWrap
+{
+    cursor: pointer;
+    margin: 0px 10em 0px 5em;
+    white-space: normal;
+    width: auto;
+    overflow: hidden;
+    position: absolute;
+    left: 0px;
+    line-height: 21px;
+}
+
+div.hlFeed {
+    display: none
+}
+
+
