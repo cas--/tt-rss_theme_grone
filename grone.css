@@ -1,59 +1,52 @@
 @import "default.css";
 
-/* Reset
------------------------------------------------------------- */
-body#ttrssMain,
-body#ttrssPrefs,
-body#ttrssLogin,
-body {
-color: black;
-font-family: "Arial", sans-serif;
-font-size: 13px;
-line-height: 1.5;
+/* Reset ----- */
+body#ttrssMain, body#ttrssPrefs, body#ttrssLogin, body {
+    color: black;
+    font-family: "Arial", sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
 .dijitTreeLabel {
     vertical-align: middle;
 }
-/* Preview Pane
------------------------------------------------------------- */
-.odd,
-.even {
-background: #fff;
-padding: 5px;
-overflow: hidden;
+/* Preview Pane */
+.odd, .even {
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
 }
 
 .even.Unread,
 .even.Unread td {
-background: #fff;
+    background: #fff;
 }
 
-/* I don't care for the content preview or author info. Just show me the headline */
-span.contentPreview,
+/* Don't show author info*/
 span.author {
-display: none;
+    display: none;
 }
 
 
 /* Post Content
 ------------------------------------------------------------ */
 div.postTitle a {
-color: #000;
-font-size: 20px;
-font-size: 1.250rem; /* 20 / 16 */
-font-weight: 700;
+    color: #000;
+    font-size: 20px;
+    font-size: 1.250rem; /* 20 / 16 */
+    font-weight: 700;
 }
 
 div.postReply div.postContent {
-font-size: 14px;
-font-size: 0.875rem; /* 14 / 16 */
-padding: 20px;
+    font-size: 14px;
+    font-size: 0.875rem; /* 14 / 16 */
+    padding: 20px;
 }
 
 div.postContent p {
-margin-bottom: 16px;
-margin-bottom: 1rem; /* 16 / 16 */
+    margin-bottom: 16px;
+    margin-bottom: 1rem; /* 16 / 16 */
 }
 
 /* set font to gray normal for all read */
@@ -68,29 +61,21 @@ div.cdm.expandable.Unread div.cdmHeader a.title {
     color: black;
 }
 
-/* disable counter */
-#feedTree .counterNode {
-    display: none;
-}
-
-/* Article Text Summary Blurb */
+/* Article Excerpt */
 span.cdmExcerpt {
-font-size: 12px;
-vertical-align: middle;
-padding-left: 3px;
+    font-size: 12.5px;
+    vertical-align: middle;
+    padding-left: 3px;
 }
 
-/* reduce height of feeds to 21px + 2px margin-bottom*/
+/* reduce height of feeds to 21px + 2px margin-bottom and move feeds to the left by 10px */
 #feedTree .dijitTreeNode {
     line-height: 1.2;
     margin: 2px 0;
+    margin-left: -10px;
 }
 
-/* move feeds to the left by 10px */
-div.dijitTreeNode{
-margin-left: -10px;
-}
-div.dijitTreeIsRoot{
+#feedTree .dijitTreeIsRoot{
 margin-left: 0px;
 }
 
@@ -118,33 +103,40 @@ margin-left: 0px;
     background-color: rgb(229, 229, 229);
     background-image: none;
 }
-
+.claro .dijitTreeRowActive {
+    background-color: rgb(229, 229, 229);
+    background-image: none;
+}
 
 /* image for category expand */
-#ttrssMain .dijitTreeExpandoOpened {
+#feedTree .dijitTreeExpandoOpened {
     background-image: url(grone_imgs/grone_sprite.png);
-    background-position: -16px -16px;
+    background-position: -20px 0px;
     position: relative;
+    margin-right: -4px;
+    width: 20px;
+    left: 4px;
 }
 
-#ttrssMain .dijitTreeExpandoClosed {
+#feedTree .dijitTreeExpandoClosed {
     background-image: url(grone_imgs/grone_sprite.png);
-    background-position: 0px -16px;
+    background-position: 0px 0px;
     position: relative;
+    margin-right: -4px;
+    width: 20px;
+    left: 4px;
 }
-#ttrssMain .dijitTreeExpandoLeaf {
+#feedTree .dijitTreeExpandoLeaf {
     background-image: none;
 }
 /* folder icon */
-#ttrssMain .dijitIconFolderOpen,
-#ttrssMain .dijitFolderOpened {
-    background-image: url(grone_imgs/grone_sprite.png);
-    background-position: -16px 0px;
+#feedTree .dijitIconFolderOpen,
+#feedTree .dijitFolderOpened {
+    display: none;
 }
-#ttrssMain .dijitIconFolderClosed,
-#ttrssMain .dijitFolderClosed {
-    background-image: url(grone_imgs/grone_sprite.png);
-    background-position: 0px 0px;
+#feedTree .dijitIconFolderClosed,
+#feedTree .dijitFolderClosed {
+    display: none;
 }
 
 /* keep text on one line
@@ -167,7 +159,7 @@ div.cdmHeader > * {
 #headlines-frame > div > div.cdmHeader > span.titleWrap
 {
     cursor: pointer;
-    margin: 0px 10em 0px 5em;
+    margin: 0px 10em 0px 3.5em;
     white-space: normal;
     width: auto;
     overflow: hidden;
@@ -177,7 +169,19 @@ div.cdmHeader > * {
 }
 
 div.hlFeed {
-    display: none
+    display: none;
 }
 
+img.pubPic {
+    display: none;
+}
 
+#feed_title {
+    color: black;
+    font-size: 13.5px;
+    font-weight: bold;
+}
+
+div#headlines-toolbar span.r a {
+    color: black;
+}
