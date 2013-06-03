@@ -159,7 +159,7 @@ div.cdmHeader > * {
 #headlines-frame > div > div.cdmHeader > span.titleWrap
 {
     cursor: pointer;
-    margin: 0px 10em 0px 3.5em;
+    margin: 0px 10em 0px 5em;
     white-space: normal;
     width: auto;
     overflow: hidden;
@@ -184,4 +184,11 @@ img.pubPic {
 
 div#headlines-toolbar span.r a {
     color: black;
+}
+
+div.cdmHeader img.tinyFeedIcon {
+float: left;
+left: 0;
+position: absolute;
+margin-left: 3.5em;
 }
