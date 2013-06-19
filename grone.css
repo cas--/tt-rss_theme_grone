@@ -8,6 +8,10 @@ body#ttrssMain, body#ttrssPrefs, body#ttrssLogin, body {
     line-height: 1.5;
 }
 
+body#ttrssMain #feedTree {
+    font-family: "Arial", sans-serif;
+}
+
 .dijitTreeLabel {
     vertical-align: middle;
 }
@@ -65,7 +69,8 @@ div.cdm.expandable.Unread div.cdmHeader a.title {
 span.cdmExcerpt {
     font-size: 12.5px;
     vertical-align: middle;
-    padding-left: 3px;
+    padding-left: 2px;
+    padding-bottom: 1px;
 }
 
 /* reduce height of feeds to 21px + 2px margin-bottom and move feeds to the left by 10px */
@@ -75,37 +80,24 @@ span.cdmExcerpt {
     margin-left: -10px;
 }
 
+body#ttrssMain #feedTree .dijitTreeRow {
+    padding: 2px 7px 2px 0px;
+}
+
 #feedTree .dijitTreeIsRoot{
 margin-left: 0px;
 }
 
-
-
-/* --- bug fix --- */
-.claro .dijitTreeRowHover {
-    border: 0;
-    border-width: 1px;
-    margin: 0px 1px;
-}
-.claro .dijitTreeRowSelected {
-    border: 0;
-    border-width: 1px;
-    margin: 0px 1px;
-}
-/*-------------------*/
-
-
-.claro .dijitTreeRowHover {
-    background-color: rgb(229, 229, 229);
-    background-image: none;
-}
-.claro .dijitTreeRowSelected {
-    background-color: rgb(229, 229, 229);
-    background-image: none;
-}
+.claro .dijitTreeRowHover,
+.claro .dijitTreeRowSelected,
 .claro .dijitTreeRowActive {
     background-color: rgb(229, 229, 229);
     background-image: none;
+}
+
+.claro .dijitSplitterVHover,
+.claro .dijitSplitterVActive{
+    background-color: rgb(229, 229, 229);
 }
 
 /* image for category expand */
@@ -159,17 +151,10 @@ div.cdmHeader > * {
 #headlines-frame > div > div.cdmHeader > span.titleWrap
 {
     cursor: pointer;
-    margin: 0px 10em 0px 5em;
-    white-space: normal;
-    width: auto;
-    overflow: hidden;
-    position: absolute;
-    left: 0px;
-    line-height: 21px;
-}
-
-div.hlFeed {
-    display: none;
+    padding-left: 20px;
+    padding-right: 10px;
+    max-width: 200px;
+    line-height: 20px;
 }
 
 img.pubPic {
@@ -182,13 +167,85 @@ img.pubPic {
     font-weight: bold;
 }
 
+div#headlines-toolbar span.r {
+    text-align: left;
+    float: left;
+}
+
 div#headlines-toolbar span.r a {
     color: black;
 }
 
 div.cdmHeader img.tinyFeedIcon {
-float: left;
-left: 0;
-position: absolute;
-margin-left: 3.5em;
+    float: left;
+    left: 0;
+    position: absolute;
+    margin-left: 48px;
+
 }
+
+/* hide border on splitter */
+#content-wrap{
+    border-left: 0;
+}
+#feeds-holder{
+    border-right: 0;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1) inset;
+    background: none;
+}
+.claro .dijitSplitterV .dijitSplitterThumb {
+    display: none;
+}
+
+/* Add 'logo' */
+#feeds-holder:before{
+    content: "Tiny Tiny RSS";
+    color: black;
+    font-size: 20px;
+    line-height: 51px;
+    text-align:center;
+    margin-left: 20px;
+}
+
+div#headlines-toolbar {
+    text-align: right;
+    border-color: #ebebeb;
+    background-color: #FFFFFF;
+}
+
+#feedTree{
+    border-top: 1px solid rgb(235, 235, 235);
+}
+
+#main-toolbar{
+    background-color: #FFFFFF;
+    border-bottom: 0;
+}
+
+#selected_prompt {
+    margin-left: 15px;
+    float: right;
+}
+
+div.cdm.expandable {
+    border-color: #ebebeb;
+}
+
+/* .claro .dijitCheckBox {
+    background-image: none;
+    border: 1px solid rgba(155, 155, 155, 0.57);
+    width: 11px;
+    height: 11px;
+}*/
+
+/* reduce padding in menu items */
+.claro td.dijitMenuItemLabel {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+/* vertically center the rss icon */
+.noborder {
+    padding-bottom: 4px;
+}
+
